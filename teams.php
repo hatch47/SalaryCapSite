@@ -67,103 +67,104 @@ $conn = $db->connect();
 
     // Adjust SQL query based on the selected team
     if ($team == 'All') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Anaheim Ducks'";
+        $sql = "SELECT * FROM players WHERE team = 'Anaheim Ducks' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     } elseif ($team == 'Anaheim') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Anaheim Ducks'";
+        $sql = "SELECT * FROM players WHERE team = 'Anaheim Ducks' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Boston') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Boston Bruins'";
+        $sql = "SELECT * FROM players WHERE team = 'Boston Bruins' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Buffalo') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Buffalo Sabres'";
+        $sql = "SELECT * FROM players WHERE team = 'Buffalo Sabres' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Calgary') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Calgary Flames'";
+        $sql = "SELECT * FROM players WHERE team = 'Calgary Flames' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Carolina') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Carolina Hurricanes'";
+        $sql = "SELECT * FROM players WHERE team = 'Carolina Hurricanes' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Chicago') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Chicago Blackhawks'";
+        $sql = "SELECT * FROM players WHERE team = 'Chicago Blackhawks' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Colorado') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Colorado Avalanche'";
+        $sql = "SELECT * FROM players WHERE team = 'Colorado Avalanche' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Columbus') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Columbus Blue Jackets'";
+        $sql = "SELECT * FROM players WHERE team = 'Columbus Blue Jackets' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Dallas') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Dallas Stars'";
+        $sql = "SELECT * FROM players WHERE team = 'Dallas Stars' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Detroit') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Detroit Red Wings'";
+        $sql = "SELECT * FROM players WHERE team = 'Detroit Red Wings' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Edmonton') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Edmonton Oilers'";
+        $sql = "SELECT * FROM players WHERE team = 'Edmonton Oilers' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Florida') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Florida Panthers'";
+        $sql = "SELECT * FROM players WHERE team = 'Florida Panthers' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Los Angeles') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Los Angeles Kings'";
+        $sql = "SELECT * FROM players WHERE team = 'Los Angeles Kings' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Minnesota') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Minnesota Wild'";
+        $sql = "SELECT * FROM players WHERE team = 'Minnesota Wild' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Montreal') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Montreal Canadiens'";
+        $sql = "SELECT * FROM players WHERE team = 'Montreal Canadiens' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Nashville') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Nashville Predators'";
+        $sql = "SELECT * FROM players WHERE team = 'Nashville Predators' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'New Jersey') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'New Jersey Devils'";
+        $sql = "SELECT * FROM players WHERE team = 'New Jersey Devils' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'New York Islanders') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'New York Islanders'";
+        $sql = "SELECT * FROM players WHERE team = 'New York Islanders' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'New York Rangers') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'New York Rangers'";
+        $sql = "SELECT * FROM players WHERE team = 'New York Rangers' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Ottawa') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Ottawa Senators'";
+        $sql = "SELECT * FROM players WHERE team = 'Ottawa Senators' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Philadelphia') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Philadelphia Flyers'";
+        $sql = "SELECT * FROM players WHERE team = 'Philadelphia Flyers' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Pittsburgh') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Pittsburgh Penguins'";
+        $sql = "SELECT * FROM players WHERE team = 'Pittsburgh Penguins' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'San Jose') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'San Jose Sharks'";
+        $sql = "SELECT * FROM players WHERE team = 'San Jose Sharks' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Seattle') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Seattle Kraken'";
+        $sql = "SELECT * FROM players WHERE team = 'Seattle Kraken' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'St. Louis') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'St. Louis Blues'";
+        $sql = "SELECT * FROM players WHERE team = 'St. Louis Blues' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Tampa Bay') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Tampa Bay Lightning'";
+        $sql = "SELECT * FROM players WHERE team = 'Tampa Bay Lightning' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Toronto') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Toronto Maple Leafs'";
+        $sql = "SELECT * FROM players WHERE team = 'Toronto Maple Leafs' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Utah') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Utah'";
+        $sql = "SELECT * FROM players WHERE team = 'Utah' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Vancouver') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Vancouver Canucks'";
+        $sql = "SELECT * FROM players WHERE team = 'Vancouver Canucks' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Vegas') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Vegas Golden Knights'";
+        $sql = "SELECT * FROM players WHERE team = 'Vegas Golden Knights' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Washington') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Washington Capitals'";
+        $sql = "SELECT * FROM players WHERE team = 'Washington Capitals' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
     elseif ($team == 'Winnipeg') {
-        $sql = "SELECT * FROM players WHERE TEAM = 'Winnipeg Jets'";
+        $sql = "SELECT * FROM players WHERE team = 'Winnipeg Jets' ORDER BY CASE WHEN `2024-25` REGEXP '^[0-9]' THEN 0 ELSE 1 END, CASE WHEN `2024-25` REGEXP '^[0-9]' THEN CAST(`2024-25` AS UNSIGNED) ELSE NULL END DESC, `2024-25`";
     }
+    
     
     
 
