@@ -8,7 +8,7 @@
 <body>
 <div class="center">
 
-<?php include('navbar.php'); ?>
+<?php include('updatesNavbar.php'); ?>
 
 <br>
 
