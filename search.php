@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 ?>
 <footer>
-<h6>Updated 2024-06-11.</h6>
+<?php include('footer.php'); ?>
 </footer>
 </div>
 </body>

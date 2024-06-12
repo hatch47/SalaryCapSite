@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="styles.css">
 	<script src="script.js"></script>
-	<title>NHLCAP</title>
+	<title>Home</title>
 </head>
 <body>
 
@@ -74,9 +74,7 @@ if ($result->num_rows > 0) {
 $db->close();
 
 ?>
-<div class="fixed-bottom">
-<h6>Updated 2024-06-11.</h6>
-</div>
+<?php include('footer.php'); ?>
 </div>
 </body>
 

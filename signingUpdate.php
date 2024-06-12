@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-	<title>Player Insert</title>
+	<title>Player Signing Update</title>
 </head>
 <body>
 <div class="center">
@@ -12,13 +12,13 @@
 
 <br>
 
-<h2>Insert New Player</h2>
+<h2>Update Player</h2>
 
 <br>
 <!-- Form with dropdown to select team -->
 <form method="post" action="">
     <b>
-        <label for="team">Team</label><br>
+        <label for="team">Previous Team</label><br>
         <select name="team" id="team">
         <option value="Anaheim Ducks">Anaheim Ducks</option>
         <option value="Boston Bruins">Boston Bruins</option>
@@ -59,6 +59,57 @@
         <br>
 	    <input type="text" id="player" name="player">
 
+        <br><br> <br><br> <br><br>
+        <label for="team2">New Team</label><br>
+        <select name="team2" id="team2">
+        <option value="Anaheim Ducks">Anaheim Ducks</option>
+        <option value="Boston Bruins">Boston Bruins</option>
+        <option value="Buffalo Sabres">Buffalo Sabres</option>
+        <option value="Calgary Flames">Calgary Flames</option>
+        <option value="Carolina Hurricanes">Carolina Hurricanes</option>
+        <option value="Chicago Blackhawks">Chicago Blackhawks</option>
+        <option value="Colorado Avalanche">Colorado Avalanche</option>
+        <option value="Columbus Blue Jackets">Columbus Blue Jackets</option>
+        <option value="Dallas Stars">Dallas Stars</option>
+        <option value="Detroit Red Wings">Detroit Red Wings</option>
+        <option value="Edmonton Oilers">Edmonton Oilers</option>
+        <option value="Florida Panthers">Florida Panthers</option>
+        <option value="Los Angeles Kings">Los Angeles Kings</option>
+        <option value="Minnesota Wild">Minnesota Wild</option>
+        <option value="Montreal Canadiens">Montreal Canadiens</option>
+        <option value="Nashville Predators">Nashville Predators</option>
+        <option value="New Jersey Devils">New Jersey Devils</option>
+        <option value="New York Islanders">New York Islanders</option>
+        <option value="New York Rangers">New York Rangers</option>
+        <option value="Ottawa Senators">Ottawa Senators</option>
+        <option value="Philadelphia Flyers">Philadelphia Flyers</option>
+        <option value="Pittsburgh Penguins">Pittsburgh Penguins</option>
+        <option value="San Jose Sharks">San Jose Sharks</option>
+        <option value="Seattle Kraken">Seattle Kraken</option>
+        <option value="St. Louis Blues">St. Louis Blues</option>
+        <option value="Tampa Bay Lightning">Tampa Bay Lightning</option>
+        <option value="Toronto Maple Leafs">Toronto Maple Leafs</option>
+        <option value="Utah">Utah</option>
+        <option value="Vancouver Canucks">Vancouver Canucks</option>
+        <option value="Vegas Golden Knights">Vegas Golden Knights</option>
+        <option value="Washington Capitals">Washington Capitals</option>
+        <option value="Winnipeg Jets">Winnipeg Jets</option>
+        </select>
+
+        <br><br>
+        <label for="status">Status (NHL)</label>
+        <br>
+	    <input type="text" id="status" name="status">
+
+        <br><br>
+        <label for="acquired">Acquired</label>
+        <br>
+	    <select name="acquired" id="acquired">
+        <option value="Signed">Signed</option>
+        <option value="Trade">Trade</option>
+        <option value="Waivers claim">Waivers claim</option>
+        </select>
+
         <br><br>
         <label for="pos">Position</label><br>
         <select name="pos" id="pos">
@@ -76,21 +127,6 @@
         <label for="terms">Special Terms</label>
         <br>
 	    <input type="text" id="terms" name="terms">
-
-        <br><br>
-        <label for="status">Status (NHL)</label>
-        <br>
-	    <input type="text" id="status" name="status">
-
-        <br><br>
-        <label for="acquired">Acquired</label>
-        <br>
-	    <input type="text" id="acquired" name="acquired">
-
-        <br><br>
-        <label for="age">Age</label>
-        <br>
-	    <input type="text" id="age" name="age">
 
         <br><br>
         <label for="cap">Cap%</label>
@@ -126,6 +162,7 @@
         <label for="2029-30">2029-30 Cap Hit</label>
         <br>
 	    <input type="text" id="2029-30" name="2029-30">
+
     </b>
         <br><br>
         <input type="submit" value="Submit">
@@ -150,11 +187,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $team = $_POST['team'];
     $player = $_POST['player'];
-    $pos = $_POST['pos'];
-    $terms = $_POST['terms'];
+    $team2 = $_POST['team2'];
     $status = $_POST['status'];
     $acquired = $_POST['acquired'];
-    $age = $_POST['age'];
+    $pos = $_POST['pos'];
+    $terms = $_POST['terms'];
     $cap = $_POST['cap'];
     $salary_2024_25 = $_POST['2024-25'];
     $salary_2025_26 = $_POST['2025-26'];
@@ -164,12 +201,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $salary_2029_30 = $_POST['2029-30'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO players (team, player, pos, terms, status, acquired, age, `cap%`, `2024-25`, `2025-26`, `2026-27`, `2027-28`, `2028-29`, `2029-30`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssidssssss", $team, $player, $pos, $terms, $status, $acquired, $age, $cap, $salary_2024_25, $salary_2025_26, $salary_2026_27, $salary_2027_28, $salary_2028_29, $salary_2029_30);
+    $stmt = $conn->prepare("UPDATE players SET team = ?, status = ?, acquired = ?, pos = ?, terms = ?, `cap%` = ?, `2024-25` = ?, `2025-26` = ?, `2026-27` = ?, `2027-28` = ?, `2028-29` = ?, `2029-30` = ? WHERE TEAM = ? AND PLAYER = ?");
+    $stmt->bind_param("sssssdssssssss", $team2, $status, $acquired, $pos, $terms, $cap, $salary_2024_25, $salary_2025_26, $salary_2026_27, $salary_2027_28, $salary_2028_29, $salary_2029_30, $team, $player);
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New player created successfully";
+        echo "New trade created successfully";
     } else {
         echo "Error: " . $stmt->error;
     }

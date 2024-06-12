@@ -89,7 +89,7 @@ $db->close();
 ?>
 
 <div class="fixed-bottom">
-<h6>Updated 2024-06-11.</h6>
+<?php include('footer.php'); ?>
 </div>
 
 </div>
