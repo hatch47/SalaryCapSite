@@ -63,6 +63,8 @@
         <label for="pos">Position</label><br>
         <select name="pos" id="pos">
         <option value="C">C</option>
+        <option value="RW">RW</option>
+        <option value="LW">LW</option>
         <option value="C, LW">C, LW</option>
         <option value="C, RW">C, RW</option>
         <option value="LW, RW">LW, RW</option>
