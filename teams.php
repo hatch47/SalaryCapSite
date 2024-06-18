@@ -200,12 +200,12 @@ if ($result->num_rows > 0) {
     echo '<table class="centered">';
     echo '<tr>
             <th>PLAYER</th>
-            <th>TERMS</th>
+            
             <th>POS</th>
             <th>STATUS</th>
-            <th>ACQUIRED</th>
+            
             <th>AGE</th>
-            <th>CAP%</th>
+            
             <th>2024-25</th>
             <th>2025-26</th>
             <th>2026-27</th>
@@ -213,16 +213,18 @@ if ($result->num_rows > 0) {
             <th>2028-29</th>
             <th>2029-30</th>
           </tr>';
-
+        //   <th>TERMS</th> 
+        //   <th>ACQUIRED</th>
+        //   <th>CAP%</th>
     // Output data of each row
     echo '<tr>';
     echo '<td><b>' . htmlspecialchars($first_row['PLAYER']) . '</b></td>';
-    echo '<td>' . htmlspecialchars($first_row['TERMS']) . '</td>';
+    // echo '<td>' . htmlspecialchars($first_row['TERMS']) . '</td>';
     echo '<td>' . htmlspecialchars($first_row['POS']) . '</td>';
     echo '<td>' . htmlspecialchars($first_row['STATUS']) . '</td>';
-    echo '<td>' . htmlspecialchars($first_row['ACQUIRED']) . '</td>';
+    // echo '<td>' . htmlspecialchars($first_row['ACQUIRED']) . '</td>';
     echo '<td>' . htmlspecialchars($first_row['AGE']) . '</td>';
-    echo '<td>' . htmlspecialchars($first_row['CAP%']) . '</td>';
+    // echo '<td>' . htmlspecialchars($first_row['CAP%']) . '</td>';
     echo '<td><b>' . htmlspecialchars($first_row['2024-25']) . '</b></td>';
     echo '<td><b>' . htmlspecialchars($first_row['2025-26']) . '</b></td>';
     echo '<td><b>' . htmlspecialchars($first_row['2026-27']) . '</b></td>';
@@ -234,12 +236,12 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<tr>';
         echo '<td><b>' . htmlspecialchars($row['PLAYER']) . '</b></td>';
-        echo '<td>' . htmlspecialchars($row['TERMS']) . '</td>';
+        // echo '<td>' . htmlspecialchars($row['TERMS']) . '</td>';
         echo '<td>' . htmlspecialchars($row['POS']) . '</td>';
         echo '<td>' . htmlspecialchars($row['STATUS']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['ACQUIRED']) . '</td>';
+        // echo '<td>' . htmlspecialchars($row['ACQUIRED']) . '</td>';
         echo '<td>' . htmlspecialchars($row['AGE']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['CAP%']) . '</td>';
+        // echo '<td>' . htmlspecialchars($row['CAP%']) . '</td>';
         echo '<td><b>' . htmlspecialchars($row['2024-25']) . '</b></td>';
         echo '<td><b>' . htmlspecialchars($row['2025-26']) . '</b></td>';
         echo '<td><b>' . htmlspecialchars($row['2026-27']) . '</b></td>';

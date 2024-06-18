@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
             <th>POS</th>
 			<th>ACQUIRED</th>
 			<th>AGE</th>
-            <th>CAP</th>
+            
             <th>2024-25</th>
 			
           </tr>';
@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
         // echo '<td>' . htmlspecialchars($row['STATUS']) . '</td>';
         echo '<td>' . htmlspecialchars($row['ACQUIRED']) . '</td>';
         echo '<td>' . htmlspecialchars($row['AGE']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['CAP%']) . '</td>';
+        // echo '<td>' . htmlspecialchars($row['CAP%']) . '</td>';
         echo '<td><b>' . htmlspecialchars($row['2024-25']) . '</b></td>';
 		// echo '<td>' . htmlspecialchars($row['LAST_EDIT']) . '</td>';
         echo '</tr>';
