@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo '<tr>';
         echo '<td>' . htmlspecialchars($row['TEAM']) . '</td>';
-        echo '<td><b>' . htmlspecialchars($row['PLAYER']) . '</b></td>';
+        echo '<td><b><a href="https://www.google.com/search?q=' . urlencode($row['PLAYER']) . '" target="_blank" style="color: black;">' . htmlspecialchars($row['PLAYER']) . '</a></b></td>';
         // echo '<td>' . htmlspecialchars($row['TERMS']) . '</td>';
         echo '<td>' . htmlspecialchars($row['POS']) . '</td>';
         // echo '<td>' . htmlspecialchars($row['STATUS']) . '</td>';

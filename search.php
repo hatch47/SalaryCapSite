@@ -47,7 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "<table class='centered'>";
 		echo "<tr><th>TEAM</th><th>PLAYER</th><th>TERMS</th><th>POSITION</th><th>STATUS</th><th>ACQUIRED</th><th>AGE</th><th>CAP%</th><th>2024-25</th><th>2025-26</th><th>2026-27</th><th>2027-28</th><th>2028-29</th><th>2029-30</th></tr>";
 		do {
-			echo "<tr><td>$team</td><td><b>$player</b></td><td>$terms</td><td>$pos</td><td>$status</td><td>$acquired</td><td>$age</td><td>$cap</td><td><b>$season</b></td><td><b>$season2</b></td><td><b>$season3</b></td><td><b>$season4</b></td><td><b>$season5</b></td><td><b>$season6</b></td></tr>";
+			// echo "<tr><td>$team</td><td><b>$player</b></td><td>$terms</td><td>$pos</td><td>$status</td><td>$acquired</td><td>$age</td><td>$cap</td><td><b>$season</b></td><td><b>$season2</b></td><td><b>$season3</b></td><td><b>$season4</b></td><td><b>$season5</b></td><td><b>$season6</b></td></tr>";
+			echo '<tr><td>' . htmlspecialchars($team) . '</td><td><b><a href="https://www.google.com/search?q=' . urlencode($player) . '" target="_blank" style="color: black;">' . htmlspecialchars($player) . '</a></b></td><td>' . htmlspecialchars($terms) . '</td><td>' . htmlspecialchars($pos) . '</td><td>' . htmlspecialchars($status) . '</td><td>' . htmlspecialchars($acquired) . '</td><td>' . htmlspecialchars($age) . '</td><td>' . htmlspecialchars($cap) . '</td><td><b>' . htmlspecialchars($season) . '</b></td><td><b>' . htmlspecialchars($season2) . '</b></td><td><b>' . htmlspecialchars($season3) . '</b></td><td><b>' . htmlspecialchars($season4) . '</b></td><td><b>' . htmlspecialchars($season5) . '</b></td><td><b>' . htmlspecialchars($season6) . '</b></td></tr>';
 		} while ($stmt_player->fetch());
 		echo "</table>";
 	} else {
