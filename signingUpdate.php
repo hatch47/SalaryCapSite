@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New signing created successfully";
+        echo "New signing created successfully. Refresh page before making another signing.";
     } else {
         echo "Error: " . $stmt->error;
     }

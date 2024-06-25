@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New trade created successfully";
+        echo "New trade created successfully, Refresh page before making another trade.";
     } else {
         echo "Error: " . $stmt->error;
     }

@@ -171,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New player created successfully";
+        echo "New player created successfully. Refresh page before making another insert.";
     } else {
         echo "Error: " . $stmt->error;
     }
