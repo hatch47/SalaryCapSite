@@ -130,7 +130,7 @@
 	    <input type="text" id="2029-30" name="2029-30">
     </b>
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br>
     </form>
 
 
@@ -171,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New player created successfully. Refresh page before making another insert.";
+        echo "<br>New player created successfully. <a href='insert.php'>Refresh</a> page before making another insert.";
     } else {
         echo "Error: " . $stmt->error;
     }

@@ -112,7 +112,7 @@
 
     </b>
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br>
     </form>
 
 
@@ -144,7 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New trade created successfully, Refresh page before making another trade.";
+        // echo "New trade created successfully, Refresh page before making another trade.";
+        echo '<br>New trade created successfully, <a href="tradeUpdate.php">Refresh</a> page before making another trade.';
     } else {
         echo "Error: " . $stmt->error;
     }

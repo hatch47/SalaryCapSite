@@ -167,7 +167,7 @@
 
     </b>
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br>
     </form>
 
 
@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New signing created successfully. Refresh page before making another signing.";
+        echo "<br>New signing created successfully. <a href='signingUpdate.php'>Refresh</a> page before making another signing.";
     } else {
         echo "Error: " . $stmt->error;
     }
