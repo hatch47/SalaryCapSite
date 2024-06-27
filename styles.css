@@ -46,12 +46,12 @@
 .centered td, .centered th {
     border: 0; /* Remove default cell borders */
     padding: 5px; /* Add padding to cells */
-    height: 50px; 
-    width: 100px; 
+    height: 20px; 
+    width: 160px; 
 }
 
 .centered tr {
-    height: 50px; /* Set height for rows */ 
+    height: 20px; /* Set height for rows */ 
 }
 
 .centered tr:not(:last-child) {
