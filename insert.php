@@ -85,7 +85,8 @@
 	    <input type="text" id="status" name="status">
 
         <br><br>
-        <label for="acquired">Acquired</label>
+        <!-- Switch Aquired to Dropdown -->
+        <label for="acquired">Acquired</label> 
         <br>
 	    <input type="text" id="acquired" name="acquired">
 
